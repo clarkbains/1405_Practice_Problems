@@ -3,7 +3,9 @@
 
 This problem will introduct functions
 
-Functions are an easy way to clarify code, and repeat code in multiple places without really repeating the entire code. A function is a block of self contained code, given a name, input values, and an output value. By writing a function, like `promptForInput(msg, type)`, you would be able to simply call `response = promptForInput("Enter a number", "num")` and then your code contained inside the function would run, potentially repeating the message until if got a value that matches a set of rules for a `num`, like potentially being a positive digit. This way, the 5 or so lines it takes to do this don't need to be repeated throughout your code, and are in one central spot if they need modification, updating or otherwise. 
+Functions are an easy way to clarify code, and repeat code in multiple places without really repeating the entire code. A function is a block of self contained code, given a name, input values, and an output value. By writing a function, like `promptForInput(msg, type)`, you would be able to simply call `response = promptForInput("Enter a number", "num")` and then your code contained inside the function would run, potentially repeating the message until if got a value that matches a set of rules for a `num`, like potentially being a positive digit. This way, the 5 or so lines it takes to do this don't need to be repeated throughout your code, and are in one central spot if they need modification, updating or otherwise.
+
+For this task, you should rewrite your problem 3 code to validata user input. Your function should accept a message to display, and a string representing a type of data, like `string`, `num`, `decimal`, and it should continually prompt the user for the value until it fits within the rules you define for each data type. It should then return the value that is good.
 
 ---
 Syntax to know:
