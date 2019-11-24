@@ -14,5 +14,8 @@ Syntax to know:
 
 * `elif {condition}:` Must follow an `if` or `elif` block immediately after the code inside is finished. Should be indented the same as the accompanying conditional blocks. Similar to `if`, `elif` will run the indented code below it if the condition evaluates to true. In an `if`/`elif`/`else`, once the code in the first block's with a true `{condition}` is run, the chain breaks, and jumps to the line immediately after the last `elif`/`else`.
 * `else:` If none of the conditions in an `if`/`elif` chain are true, then the else block executes the code contained inside (indented)
-* `float()` Similar to `int()` and `string()`. This is a datatype used to hold decimal numbes. Sometimes you will see small values at the end, like `3.0000000017` due to the way this math works on base-2 (binary) computers, versus the base-10 we use in everyday math
+* `float()` Similar to `int()` and `string()`. This is a datatype used to hold decimal numbers. Sometimes you will see small values at the end, like `3.0000000017` due to the way this math works on base-2 (binary) computers, versus the base-10 we use in everyday math
 
+[Conditional Reference](https://www.python-course.eu/python3_conditional_statements.php)
+
+[Python While Loops](https://www.w3schools.com/python/python_while_loops.asp)

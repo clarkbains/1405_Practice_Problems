@@ -18,3 +18,5 @@ if {statement}:
 ```
 * `==` allows you to test for equality. it evaluates to true if the value on the right is equal to the value on the left. Note that the inputs must be the same type. (int and int, str*ing* and str*ing*)
 
+
+[Conditional Reference](https://www.python-course.eu/python3_conditional_statements.php)

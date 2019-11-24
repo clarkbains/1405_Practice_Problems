@@ -16,6 +16,7 @@ Syntax to know:
      
      * list.`pop(x=len(`list`))` Removes and returns the first item of the array if no `x` value is specified, otherwise removes and returns element at `x`
      * list.`append(x)` Adds `x` to the end of the array
+     * string.`split(val = " ")` returns a list. Passing an argument sets the value to split on, which defaults to a space. Every occurence of the value to split on is removed, and text in between will be added as a new list element.
      * `len(`list`)` Returns the length of the array. 
 2. `{}` is how an empty dictionary is declared in python. A dictionary is just like a list, but instead of using numbers as the index, the index can be a text string. The index is instead called a key, and the associated value is simply called the value.
 3. `for `var `in` list/dictionary`:` Similar to an `if` block in terms of syntax. Will loop through the contained code, setting var to the next element or key in the list/dictionary after each loop. Useful to perform an operation on every element.
@@ -69,6 +70,8 @@ IndexError: list index out of range
 'Elm1'
 >>> print (list2)
 ['Elm0', 'New Value', 'Elm2']
+>>> "Hi,My name,is,Clark".split(',')
+['Hi', 'My name', 'is', 'Clark']
 
 ```
 Dictionarys 
@@ -90,3 +93,8 @@ Dictionarys
 {'key' : 'val', 'key2' : 'vale'}
 ```
 
+[List Reference](http://python-ds.com/python-3-list-methods)
+
+[Dictionary Official Reference](https://docs.python.org/3/tutorial/datastructures.html) - Will be a bit harder to understand, but this is more or less what all official language documentation will look like.
+
+[Simpler Dictionary Reference](https://www.tutorialspoint.com/python3/python_dictionary.htm)

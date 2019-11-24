@@ -16,3 +16,5 @@ Syntax to know:
      print (num1*num2)
       ```
 2. `return` can only be called from inside a function. This will return a value to the function itself, in such a way that if the `print` were swapped for `return` in the above example and the brackets removed, running `result = multiplybynumber(5,6)` would result in `result` having a value of `20`
+
+[Functions Reference](https://www.w3schools.com/python/python_functions.asp)

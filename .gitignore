@@ -104,3 +104,4 @@ venv.bak/
 .mypy_cache/
 Docs/Problem_Skeleton.md
 Sample_Code/.tmp.py
+Sample_Code/auth
