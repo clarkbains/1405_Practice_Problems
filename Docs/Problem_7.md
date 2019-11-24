@@ -19,3 +19,6 @@ Basic Syntax to know:
 
 `f.close()` closes the file. This should be done as soon as you are done reading from the file, and before you reopen the file in a different mode.
 
+[reference 1](https://www.w3schools.com/python/python_file_handling.asp)
+
+[reference 2](https://www.w3schools.com/python/python_file_open.asp)

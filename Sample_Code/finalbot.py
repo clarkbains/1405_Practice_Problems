@@ -1,6 +1,18 @@
 userDict = {}
 import discord
+import json
+
 client = discord.Client()
+def readData (file):
+    global userDict
+    f = open (file, 'r')
+    userDict = json.load(f)
+    f.close()
+
+def writeData (file):
+    f = open (file, 'w')
+    json.dump(userDict, f)
+    f.close()
 def readConfig (file):
     d = {}
     f = open (file, 'r')
@@ -44,7 +56,6 @@ async def handleMsg (userDict, msg, channel):
                 await sayAndAdvance("Your Grade cannot be calculated right now.", userDict, 4.2,channel)
             else:
                 await sayAndAdvance("Your Grade is " + str(total/num), userDict, 4.2,channel)
-            await sayAndAdvance ("Grade Is " + "95", userDict, 0,channel)
             print (userDict)      
         if userDict['level'] == 3:
             await promptForInput ("Course Name? ", userDict, 3.1, channel)
@@ -178,7 +189,7 @@ def listAndIndexGrades (gradeDic):
     outVal = ""
     counter = 0
     for grade in gradeDic['grades']:
-        outVal += "["+str(counter)+"] " + "("+grade['note']+"), w:" + str(grade['weight']) + ", " + str(grade['grade']) + "%"
+        outVal += "["+str(counter)+"] " + "("+grade['note']+"), w:" + str(grade['weight']) + ", " + str(grade['grade']) + "%\n"
         counter +=1
     if len(outVal)==0:
         return "No Grades"
@@ -190,6 +201,7 @@ def listAndIndexCourses (userDict):
     if 'courses' in userDict:
         for course in userDict['courses']:
             outMessage += "[" + str(counter) + "] " + course['name'] + ((" ("+course['notes']+ ")\n") if course['notes'] else "\n")
+            counter +=1
         return outMessage + "Select a course: "
     return "`;;~` to go home. No Courses Found"
 async def sayAndAdvance (msg, userDict, continueTo,channel):
@@ -206,8 +218,6 @@ def advanceLevel (userDict, continueTo):
     userDict['level'] = continueTo
 
 
-
-
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
@@ -218,12 +228,14 @@ async def on_message(message):
     if message.author == client.user:
         return
     if message.content.startswith(';;'):
-        if message.author not in userDict:
-            userDict[message.author] = {}
-            userDict[message.author]['level'] = 0 #Home Menu
+        if str(message.author) not in userDict:
+            userDict[str(message.author)] = {}
+            userDict[str(message.author)]['level'] = 0 #Home Menu
         if message.content == ";;~":
-            userDict[message.author]['level'] = 0
+            userDict[str(message.author)]['level'] = 0
             message.content == ";;" 
-        await handleMsg(userDict[message.author],message.content[2:],message.channel)
+        await handleMsg(userDict[str(message.author)],message.content[2:],message.channel)
+        writeData("d")
 opts = readConfig("auth")
+readData("d")
 client.run(opts['apikey'])
