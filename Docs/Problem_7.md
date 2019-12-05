@@ -1,24 +1,20 @@
-# Practice problem 7
+# Practice problem
+ 
 
-For this task, you should try and create a function to dump the data from the userdictionary in the last step, into a file. You should also create a function to parse the data in the file. Furthermore, you should also create a configuration file in a format of your choosing. Your configuration file will need to store what will be the API Token for your discord bot.
+This problem will introduce functions
 
-Discord uses an API, Application programming interface. This is a method of communicating with discord, without using the discord program of web interface itself. The way discord, and many other services allow this is through what is specifacly known as a REST API. Instead of visiting a standard webpage, when using a REST api, you go to a special path, discord's is `https://discordapp.com/api`, and you either request (GET), or send (POST) data to the api address. Since this is all done without any graphics, there is no place to log on, so discord allows you to obtain an API token. This is effectively your bots username and password, in one long string of characters. By providing this to discord when you use the API, you are verified and granted permission to read and send messages. 
+Functions are an easy way to clarify code, and repeat code in multiple places without really repeating the entire code. A function is a block of self contained code, given a name, input values, and an output value. By writing a function, like `promptForInput(msg, type)`, you would be able to simply call `response = promptForInput("Enter a number", "num")` and then your code contained inside the function would run, potentially repeating the message until if got a value that matches a set of rules for a `num`, like being a digit. This way, the 5 or so lines it takes to do this don't need to be repeated throughout your code, and are in one central spot if they need modification, updating or otherwise.
 
-This means that if someone has your API key, they could write there own code to read messages and reply from your bots account. On other services, your API token can be linked to your account itself, not just your bot's account, making it even worse.
-
-To avoid putting this API Key in your code, you make a file containing the API Key in some format of your own designing, and then read that file everytime your program starts up. This way you are free to share the programs source code, knowing your API Key is safe on your computer, and not in the hands of others.
+For this task, you should rewrite your problem 3 code to validate user input. Your function should accept a message to display, and a string representing a type of data, like `string`, `num`, `decimal`, and it should continually prompt the user for the value until it fits within the rules you define for each data type. It should then return the value that is good.
 
 ---
-Basic Syntax to know:
+Syntax to know:
 
-`f = open(`filename`,`mode`)` returns a file object as f. The file must be in the same folder as the python script, and it must include the file extension. Mode is to either read from or write from the file, with `r` and `w` modes respectively.
+1. `def` functionname `(`arg1`,`arg2`):` is how you define a function. Functions should generally be declared at the top of your code for python, unless you have a specific reason. You may have as many arguments as needed. The name of the arguments can be completely arbitrary. For example, if the function was defined as below, you can call `multiplybynumber(a,b)`, where `a` and `b` can be variables or values by themselves (This is called a litteral, when you write a value straight into the code). Note that you can read from, but not write to variable declared outside the function, from inside the function by default. The exception to this is using list and dictionary methods, like `append(`val`)`, `pop()`. To be able to write to all variable types from inside a function, add `global variable_name` as the first line of the function. Multiple variables can be added, separated by commas. 
+   ```python 
+   def multiplybynumber (num1,num2):
+     print (num1*num2)
+      ```
+2. `return` can only be called from inside a function. This will return a value to the function itself, in such a way that if the `print` were swapped for `return` in the above example and the brackets removed, running `result = multiplybynumber(5,6)` would result in `result` having a value of `20`. a `return` statement also stops the rest of the function from running
 
-`for line in f:` For loop that iterates over every line in the file. File has to be opened in `r` mode. Could be useful to read a file and extract key value pairs and place them into a dictionary for credential/API Key storage.
-
-`f.write(`data`)` Writes the provided string or variable to a file, and sets itself up so that the next occurence of `write` will add after the text just inserted. `.write()` does not automatically insert a new line, so you will have to write a string containing \n, `"\n"` every time you want to go to the next line.
-
-`f.close()` closes the file. This should be done as soon as you are done reading from the file, and before you reopen the file in a different mode.
-
-[reference 1](https://www.w3schools.com/python/python_file_handling.asp)
-
-[reference 2](https://www.w3schools.com/python/python_file_open.asp)
+[Functions Reference](https://www.w3schools.com/python/python_functions.asp)

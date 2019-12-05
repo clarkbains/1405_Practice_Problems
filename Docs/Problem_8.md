@@ -1,42 +1,48 @@
 # Practice problem 
 
+For this task, you will need to restructure your bot code into a format where the discord bot will be able to save the current response it got, and the next response it needs to prompt for.
 
-Make a small bot. The goal of this is to make an extremly simple greeter bot, to get you familiar with how to install and use the discord API. Create an API Token following the following tutorial [here](https://www.writebots.com/discord-bot-token/). Run `pip3 install discord.py` on the command line to get an easy to use library to interface with discord. 
+You will need to implement this first off using a dictionary to get the state, responses, and any other information you may need as soon as you receive a command from the user. Within this, you need to create a key to store the id of the next question to ask or information to display. This will also be easier if you store the initial option the user picked as another key/value pair in the user dictionary. Every piece of information you collect from the 'top level menu' to the final output should be stored in the user dictionary so that in the final stage the information is available to do the required steps with.
 
-Since the scope of some of the elements are far beyond the level of depth of my tutorial, the basic code will be provided below.
+There should only be one or two `input` statements, as your bot will not have a way on discord to get a reply, but will only be able to get the text of the reply, and the user id. Below is a sample dictionary holding the information of a user at different states. You may use this or create your own method for storing user data. 
 
-Syntax explanation
-* `async` before a function means that you can do some fancy tricks with running two functions at the same time, *multithreading*. For the purposes of this tutorial, everything will be used the same as regular functions, but you will need to add await beofore calling an asynchronous function. Also not you may call a regular function from an asynchronous function, and an asynchronous function from a asynchronous function, but you cannot easily call a asynchronous function from a regular function.
-* `@client.event` is a bit trickier. The discord libary has different events it fires when certain events happen on discord. Preceding the function with this, known as a decorator, helps the discord library find and trigger the right function with the right event
-* `discord.Client()` is imported from the discord library, and is not a part of python itself. 
+At the initial Menu. This would be the value for the key of the users id. 
 
+```{'level': 0}```
 
+After selecting option 1, add a course
 
-```python
-import discord
+```{'level': 1}```
 
-client = discord.Client()
+After entering a course name
 
+```{'level': 1.1, 'coursename': 'Test Course'}```
 
-async def processMsg (channel, msg):
-    if msg == "Hi":
-        await channel.send("Hi There")
+After entering a course note
 
-@client.event
-async def on_ready():
-    print('Logged In')
+```{'level': 1.2, 'coursename': 'Test Course', 'coursenote': 'Test Course Note'}```
 
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
+After processing the above data
 
-    if message.content.startswith('$'):
-        await processMsg (message.channel, message.content[1:])
+```{'level': 0, 'courses': [{'name': 'Test Course', 'notes': 'Test Course Note', 'grades': []}]}```
 
-client.run('your token here')
+This is easiest achieved if you define a function, and provide it the user data, and the incoming message. Have a bunch of if statements for each different menu level. Store the message/modify the user data if need be, then print what is required, (will be changed to sending later), and then exit the function. The next time the user provides input, you can use the value of the level key to go to the right code, and run it with the message data you now have. An easy way to do this flow is to infinitely loop through the collection of if statements and break every time a user is prompted for input. Otherwise, just set set the level value, and in the next loop, the appropriate message will be printed, until eventually it prompts for input and exits the loop, Below is so pseduo code that resembles the structure
 ```
- 
- 
-
- [discord.py reference](https://discordpy.readthedocs.io/en/latest/api.html) You should have all the tools you need for discord.py from the above example, but if you'd like you can look at the documentation. This documentation is what you'd typically expect in terms of difficulty, so don't worry if nothing makes sense.
+function menu (userid, userdic, msg)
+    while true
+        if userdic['level'] == 0
+            print menu
+            print message prompting for input
+            userdic['level'] = 1
+            break
+        if userdic['level'] == 1
+            if msg does not make sense
+                print message bad
+                userdic['level'] = 0
+            if msg good
+                print selected item #
+                print enter text
+                userdic['level'] = 2
+                break
+        ... And so on
+```
