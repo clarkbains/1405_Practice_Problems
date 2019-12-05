@@ -11,12 +11,11 @@ The user should be presented a menu, of which they can chose a command. Once the
 * `[2] - Drop a course` should say `Removed {course_name} from your courses`
 ---
 Syntax to know:
-* `if` allows your program to be a little smart. If the `{statement}` is true, then the `{do this}` code will be run. Note that is must be indented in a similar fashion to below.
+* `if` allows your program to be a little smart. If the condition is true, then the `{do this}` code will be run. Note that is must be indented in a similar fashion to below.
 ```
-if {statement}:
+if condition:
         {do this}
 ```
-* `==` allows you to test for equality. it evaluates to true if the value on the right is equal to the value on the left. Note that the inputs must be the same type. (int and int, str*ing* and str*ing*)
-
+* You may use all the comparison operators from the last practice problem
 
 [Conditional Reference](https://www.python-course.eu/python3_conditional_statements.php)

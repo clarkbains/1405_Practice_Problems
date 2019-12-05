@@ -236,6 +236,7 @@ async def on_message(message):
             message.content == ";;" 
         await handleMsg(userDict[str(message.author)],message.content[2:],message.channel)
         writeData("d")
-opts = readConfig("auth")
+#opts = readConfig("auth")
 readData("d")
-client.run(opts['apikey'])
+#client.run(opts['apikey'])
+client.run("NjQyODk2MzQ4MjEwOTIxNTAz.Xcdn8g.TzJGlJfKHYt9vRK4wrTQbunaARU")
