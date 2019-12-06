@@ -1,25 +1,20 @@
-inital = input ("Would you like to init with a [d]ictionary or [l]ist?")
-if inital == "d":
-    obj = {}
-if inital == "l":
-    obj = []
 while True:
-    choice = input ("Would you like to [a]dd something, or [p]rint and exit?")
-    if choice == 'a':
-        value = input ("Enter the value: ")
-        if type(obj) == dict:
-            key = input("You also have to enter the key")
-            obj[key] = value
-        else:
-            obj.append(value)
-    elif choice == 'p':
-        if type(obj) == dict:
-            for key in obj:
-                print ("Key is: " + key + ", value is " + obj[key])
-        else:
-            for i in range(len(obj)):
-                print ("[" + str(i) +"] : " + obj[i])
+    print ("Please Select an option. Q to Quit")
+    print ("[1] - Add a course")
+    print ("[2] - Drop a course")
+    choice = input ("> ")
+    if choice == 'q' or choice == 'Q':
         break
-    
-    else:
-        print ("Sorry, I didn't quite get that")
+    choice = int(choice)
+    if choice == 1:
+        print ("Enter Course Name: ")
+        course_name = input(">")
+        print ("Enter Course ID: ")
+        course_id = input(">")
+        print ("Added " + course_name + ", course id is " + course_id)
+    if choice == 2:
+        print ("Enter Course Name: ")
+        course_name = input(">")
+        print ("Removed " + course_name + " from your course")
+    if choice < 1 or choice > 2:
+        print ("Bad Input")

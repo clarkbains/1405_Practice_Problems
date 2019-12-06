@@ -1,4 +1,4 @@
-# Practice problem 2
+# Practice problem 3
 Programmers can only get so far by asking for input and regurgitating it a few seconds later. This problem tracks as you add some logic into the bot.
 
 The user should be presented a menu, of which they can chose a command. Once they've chosen a command, it should ask for any additional input. Keeping on theme with the grade bot, here are the two commands it should accept.

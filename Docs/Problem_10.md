@@ -1,4 +1,4 @@
-# Practice problem 
+# Practice problem 10
 
 
 Make a small bot. The goal of this is to make an extremly simple greeter bot, to get you familiar with how to install and use the discord API. Create an API Token following the following tutorial [here](https://www.writebots.com/discord-bot-token/). Run `pip3 install discord.py` on the command line to get an easy to use library to interface with discord. 

@@ -1,4 +1,4 @@
-# Practice problem 1
+# Practice problem 2
 This task tracks as you extend the basic greeter to repeatedly loop ask for a users name, and in addition to greeting the current person, you should say goodbye to the last person once the new person enters some text
 ```
 >What is your name? Clark

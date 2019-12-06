@@ -1,4 +1,4 @@
-# Practice problem 7
+# Practice problem 9
 
 For this task, you should try and create a function to dump the data from the userdictionary in the last step, into a file. You should also create a function to parse the data in the file. Furthermore, you should also create a configuration file in a format of your choosing. Your configuration file will need to store what will be the API Token for your discord bot.
 
@@ -9,6 +9,8 @@ This means that if someone has your API key, they could write there own code to 
 To avoid putting this API Key in your code, you make a file containing the API Key in some format of your own designing, and then read that file everytime your program starts up. This way you are free to share the programs source code, knowing your API Key is safe on your computer, and not in the hands of others. It may be useful to create another script which prompts the user for theior key, and writes it in a format readable by the main script.
 
 You may install the JSON module, which will turn a dictionary, list or variable into a human readable format, amd is able to do the reverse. This way you can write a variable and read a variable to a file. It should already be installed on your system.
+
+Make your program store the main info, so if doesn't loose info when restarted.
 
 ---
 Basic Syntax to know:
