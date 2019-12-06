@@ -4,7 +4,7 @@
 
 This problem will take a little bit of a break from the bot code to introduce for loops and lists
 
-The goal of this task will be to create a list containing lists and dictionaries, and print contents on command. This should be done using for and while loops as much as possible. Looping, lists, and dictionaries will be heavily used in the final bot.
+The goal of this task will be to create a list or dictionary containing items, and print contents on command. This should be done using for and while loops as much as possible. Looping, lists, and dictionaries will be heavily used in the final bot.
 
 ---
 Syntax to know:
@@ -17,7 +17,7 @@ Syntax to know:
      * string.`split(val = " ")` returns a list. Passing an argument sets the value to split on, which defaults to a space. Every occurrence of the value to split on is removed, and text in between will be added as a new list element.
      * `len(`list`)` Returns the length of the array. 
 2. `{}` is how an empty dictionary is declared in python. A dictionary is just like a list, but instead of using numbers as the index, the index can be text. The index is instead called a key, and the associated value is simply called the value.
-3. `for `var `in` list/dictionary`:` Similar to an `if` block in terms of syntax. Will loop through the contained code, setting var to the next element or key in the list/dictionary after each loop. Useful to perform an operation on every element.
+3. `for `var `in` list/dictionary`:` Similar to an `while` block in terms of syntax. Will loop through the contained code, setting var to the next element or key in the list/dictionary after each loop. Useful to perform an operation on every element, like printing
 4. `range(start,end,step)` returns a list like object of integers, starting at `start` and incrementing by `step` up to but not including `end`.  Omitting `start` and `step` and only passing `end` is equivalent to a `start` of 0 and `step` of 1. Useful in conjunction with `len(`list`)` to loop through the indexes of a list, or with a single integer argument to loop through the same code `end` times.
 
 Lists
@@ -37,9 +37,15 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> list1.append(6)
 >>> print (list1)
 ['Adds to the end of the list', 'New ending element', 6]
+>>> len (list1)
+3
+>>> idex1 = 1
+1
 >>> list1[0]
 'Adds to the end of the list'
 >>> list1[1]
+'New ending element'
+>>> list1[idex1]
 'New ending element'
 >>> list1[2]
 6

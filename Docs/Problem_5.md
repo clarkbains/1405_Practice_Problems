@@ -7,7 +7,7 @@ At the main level, add another option to edit a mark. Within this option, you sh
 In addition, your code should match the following two criteria
 
 1. You must use `elif` blocks where applicable
-2. You must seperate the inputs from the outputs. Ask for the required inputs in one `if`/`elif` set of block, and print them in another set of `if`/`elif` blocks. This will be useful for later. Use a variable to keep track of where your program will need to go to print the output. 
+2. You must separate the inputs from the outputs. Ask for the required inputs in one `if`/`elif` set of block, and print them in another set of `if`/`elif` blocks. This will be useful for later. Use a variable to keep track of where your program will need to go to print the output. 
 
 ---
 Syntax to know:

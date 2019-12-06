@@ -9,6 +9,9 @@ The user should be presented a menu, of which they can chose a command. Once the
 * `[1] - Add a course` should ask for the course name, and course code. After asking, it should print out a statement saying `Added {course_name}, course id is {course_id}`
 
 * `[2] - Drop a course` should say `Removed {course_name} from your courses`
+  
+An invalid input number should print out a message, and exit. This program does not need to loop
+
 ---
 Syntax to know:
 * `if` allows your program to be a little smart. If the condition is true, then the `{do this}` code will be run. Note that is must be indented in a similar fashion to below.
