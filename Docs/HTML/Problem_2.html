@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Practice problem 2</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="practice-problem-2">Practice problem 2</h1>
+<p>This task tracks as you extend the basic greeter to repeatedly loop ask for a users name, and in addition to greeting the current person, you should say goodbye to the last person once the new person enters some text</p>
+<pre><code><div>&gt;What is your name? Clark
+
+Hi Clark
+&gt;What is your name? Bob
+Bye Clark
+Hi Bob
+&gt;What is your name?
+^C
+</div></code></pre>
+<p>Note that <code>^C</code> simply means that <code>ctrl</code>+<code>c</code> was pressed in the terminal. This kills the program and exits out of the infinite loop.</p>
+<hr>
+<p>Syntax to know:</p>
+<ul>
+<li>
+<p><code>print()</code> will 'print' a value. Note that this does not mean using an actual printer, but rather printing to the screen the text and variables inside the brackets.</p>
+</li>
+<li>
+<p><code>while</code> condition <code>:</code> will repeat the code contained within it while the condition is true. (Example at bottom)</p>
+</li>
+<li>
+<p>Comparison Operators (Samples at bottom)</p>
+<ul>
+<li>a<code>==</code>b Checks if left side is the same as the right side. Evaluates to true if they do.</li>
+<li>a <code>in</code> b Checks if a contains text in b, or is equal</li>
+<li>a <code>&gt;</code> b Evaluates true if a is greater than b</li>
+<li>a <code>&gt;=</code> b Evaluates true if a is greater than or equal to b</li>
+<li>a <code>&lt;=</code> b Evaluates true if a is less than b</li>
+<li>a <code>&lt;</code> b Evaluates true if a is less than b</li>
+</ul>
+</li>
+<li>
+<p>Not quite comparison operators, but still useful for conditions</p>
+<ul>
+<li><code>True</code> this will always be true, and is good for infinite loops when used with while</li>
+<li><code>False</code> this will always be false</li>
+<li>condition1 <code>or</code> condition2 will evaluate true if one or the other condition is true</li>
+<li>condition1 <code>and</code> condition2 will evaluate true is both conditions are true</li>
+<li><code>not</code> condition1 will flip the result of condition 1. If condition 1 is true, then <code>not</code> condition 1 will be false.</li>
+</ul>
+</li>
+</ul>
+<p>Example While Loop</p>
+<pre><code class="language-python"><div><span class="hljs-keyword">while</span> true:
+    name = input (<span class="hljs-string">"Hello, What is your name? "</span>)
+    outMsg = <span class="hljs-string">"Hello, "</span> + name + <span class="hljs-string">". It is good to meet you. How can I help you today?"</span>
+    <span class="hljs-keyword">print</span> (outMsg)
+</div></code></pre>
+<p>Sample Comparison Operators</p>
+<pre><code class="language-python"><div>Python <span class="hljs-number">3.7</span><span class="hljs-number">.5</span> (default, Nov <span class="hljs-number">20</span> <span class="hljs-number">2019</span>, <span class="hljs-number">09</span>:<span class="hljs-number">21</span>:<span class="hljs-number">52</span>) 
+[GCC <span class="hljs-number">9.2</span><span class="hljs-number">.1</span> <span class="hljs-number">20191008</span>] on linux
+Type <span class="hljs-string">"help"</span>, <span class="hljs-string">"copyright"</span>, <span class="hljs-string">"credits"</span> <span class="hljs-keyword">or</span> <span class="hljs-string">"license"</span> <span class="hljs-keyword">for</span> more information.
+<span class="hljs-meta">&gt;&gt;&gt; </span>a = <span class="hljs-string">"abc"</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>b = <span class="hljs-literal">True</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>c = <span class="hljs-number">49</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>d = <span class="hljs-number">89</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>e = <span class="hljs-number">89</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>d==e
+<span class="hljs-literal">True</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>d==c
+<span class="hljs-literal">False</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>d&gt;c
+<span class="hljs-literal">True</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>d&gt;=c
+<span class="hljs-literal">True</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>d&gt;<span class="hljs-number">489</span>
+<span class="hljs-literal">False</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>a == <span class="hljs-string">"abc"</span>
+<span class="hljs-literal">True</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">not</span> a == <span class="hljs-string">"abc"</span>
+<span class="hljs-literal">False</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>a == b
+<span class="hljs-literal">False</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>a == b <span class="hljs-keyword">or</span> a == <span class="hljs-string">"abc"</span>
+<span class="hljs-literal">True</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>a == b <span class="hljs-keyword">and</span> a == <span class="hljs-string">"abc"</span>
+<span class="hljs-literal">False</span>
+</div></code></pre>
+<p><a href="https://www.w3schools.com/python/python_while_loops.asp">Python While Loops</a></p>
+
+    </body>
+    </html>

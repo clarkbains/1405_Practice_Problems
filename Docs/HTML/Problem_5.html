@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Practice problem 5</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="practice-problem-5">Practice problem 5</h1>
+<p>This problem tracks as you edit the menu from the last practice problem to involve multiple levels, and loop repeatedly through it</p>
+<p>At the main level, add another option to edit a mark. Within this option, you should be able to pick a course (Can be any course for now, irrespective of the add course option), then add, edit or remove a grade. A grade consists of both a mark, and a weight. (None of these have to be kept track of. Just print a message saying what has been done)</p>
+<p>In addition, your code should match the following two criteria</p>
+<ol>
+<li>You must use <code>elif</code> blocks where applicable</li>
+<li>You must separate the inputs from the outputs. Ask for the required inputs in one <code>if</code>/<code>elif</code> set of block, and print them in another set of <code>if</code>/<code>elif</code> blocks. This will be useful for later. Use a variable to keep track of where your program will need to go to print the output.</li>
+</ol>
+<hr>
+<p>Syntax to know:</p>
+<ul>
+<li><code>elif {condition}:</code> Must follow an <code>if</code> or <code>elif</code> block immediately after the code inside is finished. Should be indented the same as the accompanying conditional blocks. Similar to <code>if</code>, <code>elif</code> will run the indented code below it if the condition evaluates to true. In an <code>if</code>/<code>elif</code>/<code>else</code>, once the code in the first block's with a true <code>{condition}</code> is run, the chain breaks, and jumps to the line immediately after the last <code>elif</code>/<code>else</code>.</li>
+<li><code>else:</code> If none of the conditions in an <code>if</code>/<code>elif</code> chain are true, then the else block executes the code contained inside (indented)</li>
+<li><code>float()</code> Similar to <code>int()</code> and <code>string()</code>. This is a datatype used to hold decimal numbers. Sometimes you will see small values at the end, like <code>3.0000000017</code> due to the way this math works on base-2 (binary) computers, versus the base-10 we use in everyday math</li>
+</ul>
+<p><a href="https://www.python-course.eu/python3_conditional_statements.php">Conditional Reference</a></p>
+
+    </body>
+    </html>

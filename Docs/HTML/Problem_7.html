@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Practice problem 7</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="practice-problem-7">Practice problem 7</h1>
+<p>This problem will introduce functions</p>
+<p>Functions are an easy way to clarify code, and repeat code in multiple places without really repeating the entire code. A function is a block of self contained code, given a name, input values, and an output value. By writing a function, like <code>promptForInput(msg, type)</code>, you would be able to simply call <code>response = promptForInput(&quot;Enter a number&quot;, &quot;num&quot;)</code> and then your code contained inside the function would run, potentially repeating the message until if got a value that matches a set of rules for a <code>num</code>, like being a digit. This way, the 5 or so lines it takes to do this don't need to be repeated throughout your code, and are in one central spot if they need modification, updating or otherwise.</p>
+<p>For this task, you should rewrite your problem 3 code to validate user input. Your function should accept a message to display, and a string representing a type of data, like <code>string</code>, <code>num</code>, <code>decimal</code>, and it should continually prompt the user for the value until it fits within the rules you define for each data type. It should then return the value that is good.</p>
+<hr>
+<p>Syntax to know:</p>
+<ol>
+<li><code>def</code> functionname <code>(</code>arg1<code>,</code>arg2<code>):</code> is how you define a function. Functions should generally be declared at the top of your code for python, unless you have a specific reason. You may have as many arguments as needed. The name of the arguments can be completely arbitrary. For example, if the function was defined as below, you can call <code>multiplybynumber(a,b)</code>, where <code>a</code> and <code>b</code> can be variables or values by themselves (This is called a litteral, when you write a value straight into the code). Note that you can read from, but not write to variable declared outside the function, from inside the function by default. The exception to this is using list and dictionary methods, like <code>append(</code>val<code>)</code>, <code>pop()</code>. To be able to write to all variable types from inside a function, add <code>global variable_name</code> as the first line of the function. Multiple variables can be added, separated by commas.<pre><code class="language-python"><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">multiplybynumber</span> <span class="hljs-params">(num1,num2)</span>:</span>
+  <span class="hljs-keyword">print</span> (num1*num2)
+</div></code></pre>
+</li>
+<li><code>return</code> can only be called from inside a function. This will return a value to the function itself, in such a way that if the <code>print</code> were swapped for <code>return</code> in the above example and the brackets removed, running <code>result = multiplybynumber(5,6)</code> would result in <code>result</code> having a value of <code>20</code>. a <code>return</code> statement also stops the rest of the function from running</li>
+</ol>
+<p><a href="https://www.w3schools.com/python/python_functions.asp">Functions Reference</a></p>
+
+    </body>
+    </html>

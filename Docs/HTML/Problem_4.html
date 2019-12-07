@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Practice problem 4</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="practice-problem-4">Practice problem 4</h1>
+<p>This problem tracks as you edit the menu from the last practice problem to allow exiting from the loop.</p>
+<hr>
+<p>Syntax to know:</p>
+<ul>
+<li><code>break</code> will exit from a loop, skipping any code at the end and continuing after the loop. See the example below</li>
+</ul>
+<pre><code class="language-python"><div>counter = <span class="hljs-number">0</span>
+<span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+        <span class="hljs-keyword">print</span> (<span class="hljs-string">"Counter is now at"</span> + str(counter))
+        <span class="hljs-keyword">if</span> counter == <span class="hljs-number">2</span>:
+            <span class="hljs-keyword">print</span> (<span class="hljs-string">"Breaking"</span>)       
+        counter = counter + <span class="hljs-number">1</span>
+<span class="hljs-keyword">print</span> (<span class="hljs-string">"Counter finished at "</span> + str(counter))
+</div></code></pre>
+<p>will output the following:</p>
+<pre><code><div>Counter is now at 0
+Counter is now at 1
+Counter is now at 2
+Breaking
+Counter finished at 2
+
+</div></code></pre>
+
+    </body>
+    </html>

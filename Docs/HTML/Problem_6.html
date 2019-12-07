@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Practice problem 6</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="practice-problem-6">Practice problem 6</h1>
+<hr>
+<p>This problem will take a little bit of a break from the bot code to introduce for loops and lists</p>
+<p>The goal of this task will be to create a list or dictionary containing items, and print contents on command. This should be done using for and while loops as much as possible. Looping, lists, and dictionaries will be heavily used in the final bot.</p>
+<hr>
+<p>Syntax to know:</p>
+<ol>
+<li><code>[]</code> is how an empty list is declared in python. A list is a collection of variables, that can all be accessed easily programmatically. For example, in previous problems, if you needed to hold 4 pieces of data, you would use 4 variables, <code>var1</code>,<code>var2</code>,<code>var3</code> and <code>var4</code>. Using a list, you can declare <code>var = [&quot;Value1&quot;, &quot;Value2&quot;, &quot;Value3&quot;, &quot;Value4&quot;]</code> , and access the values using <code>var[0]</code> up to <code>var[3]</code>. These would be <code>&quot;Value1&quot;</code> and <code>&quot;Value4&quot;</code> respectively, just how if Note that the value in square brackets is the index, which is typically a positive integer. The index starts at 0, and goes up to the length of the list minus 1. Negative indexes start from the end of the list, is such a way that <code>var[-1]</code> would be the last element. See the IDLE shell below for a programmatic explanation.
+<ul>
+<li>
+<p>List Functions:</p>
+<ul>
+<li>list.<code>pop(x=len(</code>list<code>))</code> Removes and returns the first item of the array if no <code>x</code> value is specified, otherwise removes and returns element at <code>x</code></li>
+<li>list.<code>append(x)</code> Adds <code>x</code> to the end of the array</li>
+<li>string.<code>split(val = &quot; &quot;)</code> returns a list. Passing an argument sets the value to split on, which defaults to a space. Every occurrence of the value to split on is removed, and text in between will be added as a new list element.</li>
+<li><code>len(</code>list<code>)</code> Returns the length of the array.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>{}</code> is how an empty dictionary is declared in python. A dictionary is just like a list, but instead of using numbers as the index, the index can be text. The index is instead called a key, and the associated value is simply called the value.</li>
+<li><code>for</code>var <code>in</code> list/dictionary<code>:</code> Similar to an <code>while</code> block in terms of syntax. Will loop through the contained code, setting var to the next element or key in the list/dictionary after each loop. Useful to perform an operation on every element, like printing</li>
+<li><code>range(start,end,step)</code> returns a list like object of integers, starting at <code>start</code> and incrementing by <code>step</code> up to but not including <code>end</code>.  Omitting <code>start</code> and <code>step</code> and only passing <code>end</code> is equivalent to a <code>start</code> of 0 and <code>step</code> of 1. Useful in conjunction with <code>len(</code>list<code>)</code> to loop through the indexes of a list, or with a single integer argument to loop through the same code <code>end</code> times.</li>
+</ol>
+<p>Lists</p>
+<pre><code class="language-python"><div>Python <span class="hljs-number">3.7</span><span class="hljs-number">.5</span>rc1 (default, Oct  <span class="hljs-number">8</span> <span class="hljs-number">2019</span>, <span class="hljs-number">16</span>:<span class="hljs-number">47</span>:<span class="hljs-number">45</span>) 
+[GCC <span class="hljs-number">9.2</span><span class="hljs-number">.1</span> <span class="hljs-number">20191008</span>] on linux
+Type <span class="hljs-string">"help"</span>, <span class="hljs-string">"copyright"</span>, <span class="hljs-string">"credits"</span> <span class="hljs-keyword">or</span> <span class="hljs-string">"license"</span> <span class="hljs-keyword">for</span> more information.
+<span class="hljs-meta">&gt;&gt;&gt; </span>list1 = []
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> (list1)
+[]
+<span class="hljs-meta">&gt;&gt;&gt; </span>list1.append(<span class="hljs-string">"Adds to the end of the list"</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> (list1)
+[<span class="hljs-string">'Adds to the end of the list'</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>list1.append(<span class="hljs-string">"New ending element"</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> (list1)
+[<span class="hljs-string">'Adds to the end of the list'</span>, <span class="hljs-string">'New ending element'</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>list1.append(<span class="hljs-number">6</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> (list1)
+[<span class="hljs-string">'Adds to the end of the list'</span>, <span class="hljs-string">'New ending element'</span>, <span class="hljs-number">6</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>len (list1)
+<span class="hljs-number">3</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>idex1 = <span class="hljs-number">1</span>
+<span class="hljs-number">1</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>list1[<span class="hljs-number">0</span>]
+<span class="hljs-string">'Adds to the end of the list'</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>list1[<span class="hljs-number">1</span>]
+<span class="hljs-string">'New ending element'</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>list1[idex1]
+<span class="hljs-string">'New ending element'</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>list1[<span class="hljs-number">2</span>]
+<span class="hljs-number">6</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>list1[<span class="hljs-number">-1</span>]
+<span class="hljs-number">6</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>list1[<span class="hljs-number">-2</span>]
+<span class="hljs-string">'New ending element'</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>len(list1)
+<span class="hljs-number">3</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>list1[<span class="hljs-number">3</span>]
+Traceback (most recent call last):
+  File <span class="hljs-string">"&lt;stdin&gt;"</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;module&gt;
+IndexError: list index out of range
+<span class="hljs-meta">&gt;&gt;&gt; </span>list1.pop()
+<span class="hljs-number">6</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> (list1)
+[<span class="hljs-string">'Adds to the end of the list'</span>, <span class="hljs-string">'New ending element'</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>list1.pop(<span class="hljs-number">0</span>)
+<span class="hljs-string">'Adds to the end of the list'</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> (list1)
+[<span class="hljs-string">'New ending element'</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>list2 = [<span class="hljs-string">"Elm0"</span>, <span class="hljs-string">"Elm1"</span>, <span class="hljs-string">"Elm2"</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>list2[<span class="hljs-number">1</span>]
+<span class="hljs-string">'Elm1'</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>list2[<span class="hljs-number">1</span>] = <span class="hljs-string">"New Value"</span>
+<span class="hljs-string">'Elm1'</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> (list2)
+[<span class="hljs-string">'Elm0'</span>, <span class="hljs-string">'New Value'</span>, <span class="hljs-string">'Elm2'</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">"Hi,My name,is,Clark"</span>.split(<span class="hljs-string">','</span>)
+[<span class="hljs-string">'Hi'</span>, <span class="hljs-string">'My name'</span>, <span class="hljs-string">'is'</span>, <span class="hljs-string">'Clark'</span>]
+
+</div></code></pre>
+<p>Dictionarys</p>
+<pre><code class="language-python"><div><span class="hljs-meta">&gt;&gt;&gt; </span>a = {}
+<span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-string">"b"</span>] = <span class="hljs-string">"val"</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-string">"c"</span>] = <span class="hljs-string">"val2"</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-string">"a"</span>] = <span class="hljs-string">"val0"</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>print(a)
+{<span class="hljs-string">'b'</span>: <span class="hljs-string">'val'</span>, <span class="hljs-string">'c'</span>: <span class="hljs-string">'val2'</span>, <span class="hljs-string">'a'</span>: <span class="hljs-string">'val0'</span>}
+<span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-string">"b"</span>]
+<span class="hljs-string">'val'</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-string">"b"</span>] = <span class="hljs-string">"Not Val"</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-string">"b"</span>]
+<span class="hljs-string">'Not Val'</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>print(a)
+{<span class="hljs-string">'b'</span>: <span class="hljs-string">'Not Val'</span>, <span class="hljs-string">'c'</span>: <span class="hljs-string">'val2'</span>, <span class="hljs-string">'a'</span>: <span class="hljs-string">'val0'</span>}
+<span class="hljs-meta">&gt;&gt;&gt; </span>a = {<span class="hljs-string">'key'</span> : <span class="hljs-string">'val'</span>, <span class="hljs-string">'key2'</span> : <span class="hljs-string">'vale'</span>}
+{<span class="hljs-string">'key'</span> : <span class="hljs-string">'val'</span>, <span class="hljs-string">'key2'</span> : <span class="hljs-string">'vale'</span>}
+</div></code></pre>
+<p><a href="http://python-ds.com/python-3-list-methods">List Reference</a></p>
+<p><a href="https://docs.python.org/3/tutorial/datastructures.html">Dictionary Official Reference</a> - Will be a bit harder to understand, but this is more or less what all official language documentation will look like.</p>
+<p><a href="https://www.tutorialspoint.com/python3/python_dictionary.htm">Simpler Dictionary Reference</a></p>
+
+    </body>
+    </html>
